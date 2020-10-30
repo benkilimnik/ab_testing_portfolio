@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesign</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+      integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+  </head>
+
+  <body class="text-gray-700 font-body">
+
+    <div class="grid md:grid-cols-3">
+
+      <div class="md:col-span-3">
+        <nav class="flex flex-wrap items-center p-3 bg-gray-900">
+          <a href="#" class="inline-flex items-center p-2 mr-4">
+            <span class="text-xl font-bold tracking-wide text-white uppercase">Redesigning the Museum of Bad Art</span>
+          </a>
+          <button
+            class="inline-flex p-3 ml-auto text-white rounded outline-none hover:bg-gray-900 lg:hidden hover:text-white nav-toggler"
+            data-target="#navigation">
+            <i class="material-icons">menu</i>
+          </button>
+          <div class="hidden w-full top-navbar lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+            <div
+              class="flex flex-col items-start w-full lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center lg:h-auto">
+              <a href="#"
+                class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white">
+                <span>Home</span>
+              </a>
+              <a href="#"
+                class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white">
+                <span>Portfolio</span>
+              </a>
+              <a href="#"
+                class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white">
+                <span>Contact</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+          integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function () {
+            $(".nav-toggler").each(function (_, navToggler) {
+              var target = $(navToggler).data("target");
+              $(navToggler).on("click", function () {
+                $(target).animate({
+                  height: "toggle"
+                });
+              });
+            });
+          });
+
+        </script>
+      </div>
+
+
+      <div class="md:col-span-1 md:flex md:justify-end">
+        <nav class="text-right navbar">
+          <div class="flex items-center justify-between">
+            <div class="px-6 py-6 cursor-pointer md:hidden" id="burger">
+              <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </div>
+          </div>
+
+          <ul class="sticky top-0 hidden pr-16 mt-4 text-sm align-self-start md:block navbar-nav" id="menu">
+            <li class="py-2">
+              <a href="#demo" class="flex justify-start px-4 pl-6 text-xl md:mt-12 hover:text-gray-800">
+                Demo
+
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                </svg>
+
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#intro" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Introduction
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path fill="#fff"
+                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#problems" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Problems
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#low" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Low Fidelity
+                <svg class="h-6 ml-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                  </path>
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#high" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                High Fidelity
+
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#style" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Style Guide
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#redesign" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Redesign
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <main class="px-16 py-6 bg-gray-100 md:col-span-2">
+
+
+        <!-- <div class="grid gap-10 mt-8 mb-8 lg:grid-cols-4">
+          <div class="card hover:shadow-lg">
+            <img src="img/1.jpg" alt="stew" class="object-cover w-full h-64 sm:h-64">
+            <div class="m-4">
+              <span class="block font-bold truncate">Lucy in the Field with Flowers</span>
+              <span class="block mt-2 text-sm text-gray-700">Oil in Canvas by Unkown - Acquired from Trash in
+                Boston</span>
+            </div>
+          </div>
+          <div class="card hover:shadow-lg">
+            <img src="img/2.png" alt="noodles" class="object-cover w-full h-64 sm:h-64">
+            <div class="m-4">
+              <span class="font-bold">Queen of Chocolate Chip</span>
+              <span class="block mt-2 text-sm text-gray-700">Watercolor on Paper - Purchased at a Yard Sale in
+                Boston</span>
+            </div>
+          </div>
+        </div> -->
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="demo" class="header1">
+            Demo</h1>
+        </section>
+
+        <div class="grid justify-start gap-8 md:grid-cols-1 lg:grid-cols-2">
+
+          <div class="overflow-hidden rounded shadow-lg ">
+            <img src="./img/original.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none" />
+            <div class="py-6 text-center">
+              <a href="http://museumofbadart.org/join/" target="_blank"
+                class="inline-block transition duration-500 ease-out transform bg-white border-2 hover:shadow-inner hover:scale-125 btn text-primary border-primary hover:bg-primary hover:text-white">
+                Original</a>
+            </div>
+          </div>
+
+
+          <div class="overflow-hidden rounded shadow-lg">
+            <img src="./img/redesign.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none" />
+            <div class="py-6 text-center">
+              <a href="https://nameless-depths-22182.herokuapp.com/" target="_blank"
+                class="inline-block text-blue-500 transition duration-500 ease-out transform bg-white border-2 border-blue-500 hover:shadow-inner hover:scale-125 btn hover:bg-blue-500 hover:text-white">
+                Redesign</a>
+            </div>
+          </div>
+        </div>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="intro" class="header1">
+            Redesigning MOBA</h1>
+          <p class="paragraph">The Museum of Bad Art (MOBA) is a non-profit devoted to the upliftment of art that "would
+            not be displayed and appreciated in any other forum". In this redesign, I address the <em>Join</em>
+            page,
+            which allows users to manage their newsletter subscription status and donate to MOBA. Unfortunately, for
+            such
+            an
+            important page, it features a confusing layout and poor contrast that makes it difficult to process the
+            information onscreen. Thus, with usability metrics in-hand, I set out to create a new and improved version.
+          </p>
+          <h2 class="header2">Disclaimer</h2>
+          <p class="paragraph">
+            Critics may view this redesign as hypercritical - i.e. what's the point in redesigning a
+            website
+            for bad art? What if a shabby design is exactly what they're looking for - a form of bad art in itself? To
+            that I respond: I am no art critic, but any website, no matter how artsy, can be assessed in terms of
+            usability. To enjoy and explore their exhibitions, users must be able to glean useful information from their
+            website. For that end, good design is irreplaceable.
+          </p>
+
+          <h1 id="problems" class="header1">
+            Problems with Current Interface
+          </h1>
+          <p class="paragraph">The current webpage features a host of usability issues, which may be broken down into
+            the following
+            categories.</p>
+          <h2 class="header2">
+            Learnability</h2>
+          <ul class="paragraph">
+            <li>
+              No clear text hierarchy through colors or size. Titles are all similar sizes, some are
+              colored light-green for no apparent reason.
+            </li>
+
+            <li>
+              Hard to navigate and gain an overview of the page - too much text on screen
+            </li>
+            <li>
+              Forms are duplicated on the main page and the footer, leaving
+              users to
+              wonder what the difference between them is
+            </li>
+          </ul>
+        </section>
+
+        <div class="grid gap-10 mt-8 mb-8 lg:grid-cols-2">
+          <div class="card hover:shadow-lg">
+            <img src="img/7.png" alt="noodles" class="object-cover w-full h-64 sm:h-64">
+            <div class="m-4">
+              <span class="font-bold">Text is squashed</span>
+              <span class="block mt-2 text-sm text-gray-600">No heirarchy or table of contents</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h2 class="header2">
+            Memorability</h2>
+          <ul class="paragraph">
+            <li>Green headings have poor contrast, making them hard to read and easy to
+              forget. Same goes for the yellow text</li>
+            <li>Text hierarchy is unstructured and confusing. Hard to know where to look </li>
+            <li>Text spans the full screen, making it hard to focus on</li>
+          </ul>
+        </section>
+
+        <div class="grid gap-10 mt-8 mb-8 lg:grid-cols-2">
+          <div class="card hover:shadow-lg">
+            <img src="img/contrast.png" alt="stew" class="object-cover w-full h-64 sm:h-64">
+            <div class="m-4">
+              <span class="block font-bold truncate">Text has poor contrast</span>
+              <span class="block mt-2 text-sm text-gray-600">Making it easy to overlook and forget</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h2 class="header2">
+            Efficiency</h2>
+          <ul class="paragraph">
+            <li>User has to scroll to find the forms and donate button at the bottom of the
+              page.</li>
+            <li>The mobile version is cut in half (leaving half the available space blank and causing text
+              to bleed out of containers), making it uncomfortable and inefficient to read </li>
+          </ul>
+        </section>
+
+        <div class="grid gap-10 mt-8 mb-8 lg:grid-cols-2">
+          <div class="card hover:shadow-lg">
+            <img src="img/4.png" alt="stew" class="object-cover w-full h-64 sm:h-64">
+            <div class="m-4">
+              <span class="block font-bold truncate">Mobile layout is cut in half</span>
+              <span class="block mt-2 text-sm text-gray-600">Making it hard and uncomfortable to read</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h2 class="header2">
+            Accessibility</h2>
+          <ul class="paragraph">
+            <li>Page has several missing form labels for screen readers</li>
+            <li>Low contrast for green and yellow headings on light background</li>
+            <li>Repeated or blank alt text on multiple images</li>
+          </ul>
+        </section>
+
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="low" class="header1">
+            Low Fidelity Prototypes</h1>
+
+          <h2 class="header2">How these wireframes fix usability issues</h2>
+          <ul class="paragraph">
+
+            <li class="mb-4 leading-loose"> <em>Learnability:</em>
+              Table of contents on the side allows for easy navigation, giving
+              structure to
+              the text on screen. Headers are much larger, making them easier to distinguish from body text.
+            </li>
+            <li class="mb-4 leading-loose"> <em>Memorability:</em> Higher contrast font color makes text easier to read
+              and remember.
+              Text no longer spans the full screen width, making it easier to focus on.
+            </li>
+            <li class="mb-4 leading-loose"> <em>Efficiency:</em> Table of contents allows for speedy navigation; no more
+              endless
+              scrolling and searching. </li>
+          </ul>
+          <h2 class="header2">
+            Desktop</h2>
+
+          <div class="flex flex-wrap justify-start py-8">
+            <div class="w-12/12">
+              <img src="./img/low_desktop1.png" alt="low fidelity prototype desktop"
+                class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+            </div>
+          </div>
+          <p class="paragraph">For an explanation on how these wireframes address the usability issues, please see the
+            above section "how these wireframes fix usability issues"</p>
+          <h2 class="header2">
+            Tablet</h2>
+
+          <p class="paragraph">
+            The top navigation collapses into expandable button on the top right.
+          </p>
+
+          <div class="flex flex-wrap justify-start py-8">
+            <div class="w-12/12">
+              <img src="./img/low_tablet1.png" alt="low fidelity prototype tablet"
+                class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+            </div>
+          </div>
+
+          <h2 class="header2">
+            Mobile</h2>
+
+        </section>
+        <div class="grid flex-wrap justify-start gap-8 py-8 md:grid-cols-1 xl:grid-cols-2">
+          <div class="w-12/12">
+            <img src="./img/low_mobile1.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+
+          <div class="w-12/12">
+            <img src="./img/low_mobile2.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+
+          <div class="w-12/12">
+            <img src="./img/low_mobile3.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+
+          <div class="w-12/12">
+            <img src="./img/low_mobile4.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+        </div>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="high" class="header1">
+            High Fidelity Prototypes</h1>
+
+          <ul class="paragraph">
+            <li class="mb-2">Responsive layout adapts to different screen sizes by hiding the navigation and table of
+              contents.</li>
+            <li class="my-2">Text and images dynamically resize to match the viewport.</li>
+          </ul>
+
+          <h2 class="header2">
+            Desktop</h2>
+        </section>
+        <div class="flex flex-wrap justify-start py-8">
+          <div class="w-12/12">
+            <img src="./img/high_desktop.png" alt="high fidelity prototype desktop"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+        </div>
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+
+          <h2 class="header2">
+            Mobile</h2>
+        </section>
+
+        <div class="grid flex-wrap justify-start py-8 md:grid-cols-1 xl:grid-cols-2">
+          <div class="w-11/12 pb-8">
+            <img src="./img/high_mobile1.png" alt="high fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+
+          <div class="w-11/12 pb-8">
+            <img src="./img/high_mobile2.png" alt="high fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+
+          <div class="w-11/12">
+            <img src="./img/high_mobile3.png" alt="high fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+        </div>
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+
+
+          <h2 class="header2">
+            Tablet</h2>
+        </section>
+        <div class="flex flex-wrap justify-start py-8">
+          <div class="w-11/12">
+            <img src="./img/high_tablet1.png" alt="..."
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-start py-8">
+          <div class="w-11/12">
+            <img src="./img/high_tablet2.png" alt="..."
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+        </div>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="style" class="header1">
+            Visual Design Style Guide</h1>
+
+          <h2 class="header2">
+            Buttons</h2>
+          <div class="mt-6 text-center"><button
+              class="w-full px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase bg-blue-600 rounded shadow outline-none active:bg-blue-400 hover:shadow-lg hover:bg-blue-500 focus:outline-none"
+              type="button" style="transition: all 0.15s ease 0s;">Subscribe</button></div>
+
+          <div class="flex justify-center py-2">
+            <a href="#"
+              class="transition duration-500 ease-out transform bg-white border-2 hover:shadow-inner hover:scale-125 btn text-primary border-primary hover:bg-primary hover:text-white">
+              Donate</a>
+          </div>
+
+          <h2 class="header2">
+            Colors</h2>
+
+          <div class="grid grid-cols-4 gap-4 p-8 card">
+            <div class="h-10 bg-gray-600 border"></div>
+            <div class="h-10 bg-blue-500 border"></div>
+            <div class="h-10 border bg-primary"></div>
+            <div class="h-10 bg-gray-900 border"></div>
+          </div>
+
+          <h2 class="header2">
+            Fields and inputs</h2>
+
+          <div class="relative w-full pt-8 mb-3" data-children-count="1"><label
+              class="block mb-2 text-xs font-bold text-gray-700 uppercase">This is a Field
+            </label><input type="email"
+              class="w-full px-3 py-3 text-sm text-gray-700 placeholder-gray-400 bg-white rounded shadow focus:outline-none focus:shadow-outline"
+              placeholder="Enter Something Here" style="transition: all 0.15s ease 0s;"></div>
+
+          <h2 class="header2">
+            Cards and Images</h2>
+
+          <div class="card hover:shadow-lg">
+            <img src="./img/1.jpg" alt="Image Goes Here" class="object-cover w-full h-64 sm:h-64">
+            <div class="m-4">
+              <span class="block font-bold truncate">This is a card</span>
+              <span class="block mt-2 text-sm text-gray-600">With some additional information</span>
+            </div>
+          </div>
+
+
+          <h2 class="header2">
+            Typography</h2>
+
+
+          <div class="pb-8 card">
+            <h1 class="text-center header1">
+              This is a Header</h1>
+
+            <h2 class="text-center header2">
+              This is a Sub Header</h2>
+          </div>
+
+          <h2 class="header2">
+            Icons</h2>
+
+          <div class="grid grid-cols-5">
+            <svg class="w-5 ml-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+              </path>
+            </svg>
+            <svg class="w-5 ml-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+              </path>
+            </svg>
+            <svg class="w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <svg class="w-5 ml-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
+            <svg class="w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+
+          </div>
+
+        </section>
+
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="redesign" class="mt-12 header1">
+            Responsive Redesign</h1>
+
+          <ul class="paragraph">
+            <li>Harnessed CSS grid and flexbox to build a responsive layout</li>
+            <li>Created sticky table of contents to structure content of the page</li>
+            <li>Designed responsive forms and buttons</li>
+          </ul>
+          <div class="flex justify-start py-2 mt-10">
+            <a href="http://museumofbadart.org/join/" target="_blank"
+              class="mr-16 text-blue-500 transition duration-500 ease-out transform bg-white border-2 border-blue-500 hover:shadow-inner hover:scale-125 btn hover:bg-blue-500 hover:text-white">
+              Original</a>
+            <a href="https://nameless-depths-22182.herokuapp.com/" target="_blank"
+              class="transition duration-500 ease-out transform bg-white border-2 hover:shadow-inner hover:scale-125 btn text-primary border-primary hover:bg-primary hover:text-white">
+              Redesign</a>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="./scrollmenu.js"></script>
+    <script>
+      new ScrollMenu(['.navbar-nav a'], {
+        duration: 600,
+      })
+    </script>
+
+  </body>
+
+</html>
